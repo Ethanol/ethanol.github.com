@@ -1,0 +1,135 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="CubicStone Wei" />
+    
+    <title>该死的Jekyll</title>
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/atom.xml" rel="alternate" title="水渍" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/github.css">
+    <script type="text/javascript" src="/media/js/highlight.pack.js"></script>
+    <script type="text/javascript">
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script type="text/javascript">
+function mouseOver()
+{
+document.getElementById('b1').src ="/media/images/logo.png"
+}
+function mouseOut()
+{
+document.getElementById('b1').src ="/media/images/logo2.png"
+}
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31950738-1']);
+  _gaq.push(['_setDomainName', 'multisim.me']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <!--<h1><a title="水渍" class="" href="/">水渍</a></h1>-->
+
+
+  <a href="http://multisim.me" title="水渍" 
+onmouseover="mouseOver()" onmouseout="mouseOut()">
+<center>
+<img alt="水渍" src="/media/images/logo2.png" height="72px" width="128px" id="b1" />
+</a>
+
+
+  <br><br>
+</center>
+	</a>
+        </header>
+        <nav>
+        <span><a title="archive" class="" href="/archive.html">archive</a></span>
+
+        <span><a title="tags" class="" href="/tags.html">tags</a></span>
+        <span><a title="about" class="" href="/about.html">about me</a></span>
+        
+        <span><a title="blogroll" class="" href="/links.html">links</a></span>
+        <span><a title="subscribe me" class="" href="/atom.xml">feed</a></span>
+        </nav>
+        <article class="content">
+  <section class="title">
+    <h2>该死的Jekyll </h2>
+  </section>
+  <section class="meta">
+  <span class="time">
+    <time datetime="2013-11-20">2013-11-20</time>
+  </span>
+  
+  <br />
+  <span class="tags">
+    {
+    
+    <a href="/tags.html#文献阅读笔记" title="文献阅读笔记">文献阅读笔记</a>
+    
+    }
+  </span>
+  
+  </section>
+  <section class="post">
+  <p>OSX升级到了10.9，Ruby也跟着升级了。然后博客就挂了。</p>
+
+<p>求助<a href="http://dangfan.me">Terro</a>大神，可是他早就从Jekyll转移到了Pelican又转移到了我不知道是神马东西的平台，一番调试无果，迁移到Pelican又不成功，所以又回头找解决方案。</p>
+
+<p>试了rvm，不成。装了各种奇怪的程序包，也不成。看见Chrome上的Miku对我卖萌，我只想掐死她。</p>
+
+<p>后来改了一句Terro同学当年写的git.sh，把一句</p>
+
+<blockquote><p>bundle exec ejekyll --pygments</p></blockquote>
+
+<p>改成了</p>
+
+<blockquote><p>jekyll build</p></blockquote>
+
+<p>TMD就好了！！！</p>
+
+<p>好了！！！</p>
+
+<p>Jekyll你更新了都不告诉我么！！！</p>
+
+<p>这种智商怎么读博士！！！</p>
+
+<p>摔！！！</p>
+
+  </section>
+  
+  <section class="comment">
+  <div id="disqus_thread"></div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f28f11f3c8ba1c7"></script>
+<script type="text/javascript">
+    var disqus_shortname = 'multisim';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">评论系统由<span class="logo-disqus">Disqus</span>提供</a>
+  </section>
+  
+</article>
+
+        <div id="copy">&copy; 2012 CubicStone Wei | powered by jekyll and github | themed by <a href="http://lhzhang.com" title="sext iii">sext iii</a></div>
+      </div>
+    </div> <!--! end of #container -->
+  </body>
+</html>
