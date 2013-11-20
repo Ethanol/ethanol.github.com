@@ -2,7 +2,7 @@
 git add .
 git commit -a -m 'update'
 git push
-jekyll build
+bundle exec ejekyll --pygments
 cd _site
 #rm Gem*
 #rm git.sh
