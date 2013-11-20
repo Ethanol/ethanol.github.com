@@ -4,13 +4,48 @@
  <title>水渍</title>
  <link href="http://multisim.me/atom.xml" rel="self"/>
  <link href="http://multisim.me/"/>
- <updated>2013-11-20T15:18:07+08:00</updated>
+ <updated>2013-11-20T15:20:26+08:00</updated>
  <id>http://multisim.me/</id>
  <author>
    <name>CubicStone Wei</name>
    <email>cubicstonewei@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>文献阅读笔记 1</title>
+   <link href="http://multisim.me/2013/11/20/Articles-2.html"/>
+   <updated>2013-11-20T00:00:00+08:00</updated>
+   <id>urn:uuid:ac28bead-627d-4d6d-8f78-d981730908b8</id>
+   <content type="html">&lt;h4&gt;1 The Dynamics of Signaling as a Pharmacological Target&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Behar, M., Barken, D., Werner, S. L., &amp;amp; Hoffmann, A. (2013). The Dynamics of Signaling as a Pharmacological Target. Cell, 155(2), 448–461. doi:10.1016/j.cell.2013.09.018&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;这是我本周组会讲的文章。大体讲，就是用了「系统辨识」的方法来分析生物系统里面的信号通路，将刺激对网络中不同部分的作用利用仿真和实验对比的方式寻找出来。&lt;/p&gt;
+
+&lt;p&gt;生物研究里面对于系统这一概念还很不成熟，挖到什么就是什么，可是缺乏一种可行的基于系统的研究方法。而系统辨识的方法并不困难，需要注意的就是操作性和辨识的目的。现在看来，「目的」更重要些。&lt;/p&gt;
+
+&lt;h4&gt;2 An Ancient Chinese Mystery Cult&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Homer H. Dubs (1942). An Ancient Chinese Mystery Cult. Harvard Theological Review, 35, pp 221-240 doi:10.1017/S0017816000029679&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;这篇文章来自我最近阅读的&lt;a href=&quot;http://book.douban.com/subject/5367688/&quot;&gt;《千年末世之乱：1813年八卦教起义》&lt;/a&gt;中的一个脚注。文章写了中国关于「西王母」的信仰源流和嬗变，其中最为有趣的是在书中引用的部分，即《汉书》中记载的有关西王母的信仰和恐慌。我循着故事的味道寻回《汉书》，才发现《千年》一书的译者把《汉书》的章节编目译错了。&lt;/p&gt;
+
+&lt;h4&gt;3 Bayes&#39; theorem in the 21st century&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Efron, B. (2013). Bayes’ theorem in the 21st century. Science (New York, N.Y.), 340(6137), 1177–8. doi:10.1126/science.1236536&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;这篇文章主要批判了贝叶斯定理的狭隘之处，强调了&quot;Empirical Bayes&quot;方法的重要性。不过在道行尚浅的我看来，能用就行了，谁管21世纪的贝叶斯到底是什么样的呢。&lt;/p&gt;
+
+&lt;p&gt;21世纪还是生命科学的世纪呢。&lt;/p&gt;
+
+&lt;h4&gt;4 Fine tuning of craniofacial morphology by distant-acting enhancers&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Attanasio, C., Nord, A. S., Zhu, Y., Blow, M. J., Li, Z., Liberton, D. K., … Visel, A. (2013). Fine tuning of craniofacial morphology by distant-acting enhancers. Science (New York, N.Y.), 342(6157), 1241006. doi:10.1126/science.1241006&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;这篇文章说，脸的形状和基因enhancer的调控有关。也许在未来，基因整形会大行其道，我们可以给孩子选脸了。而且，是「纯天然」的哦。&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>文献阅读笔记 1</title>
@@ -402,39 +437,6 @@ fileD.close()
 气球先生就这样遇到了他。身材瘦高，和石头先生不一样，可是气球先生还是想跟他在一起。他隐去了自己的大部分身世，但气球先生不介意，因为他爱他。气球先生叫他锋先生，大概是因为他比较高挑。&lt;br/&gt;
 终于有一天，锋先生和气球先生准备滚床单了。锋先生脱掉了衣服，气球先生看呆了。不是因为他的身体坚硬，闪闪发亮，而是他才发现，他的衣服是一个刀鞘。而气球先生，现在必须对他改口叫刀子先生了。&lt;br/&gt;
 他俩拥抱了。气球先生的血溅了刀子先生一脸，而刀子先生觉得，扑面而来的是他从没体验过的温热。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>即景</title>
-   <link href="http://multisim.me/2013/05/23/Campus.html"/>
-   <updated>2013-05-23T00:00:00+08:00</updated>
-   <id>urn:uuid:ac28bead-627d-4d6d-8f78-d981730908b8</id>
-   <content type="html">&lt;p&gt;苍苍的西山抱住太阳&lt;br/&gt;
-看人海茫茫&lt;br/&gt;
-哪里会是我归来的方向&lt;/p&gt;
-
-&lt;p&gt;疲惫的单车已经睡着&lt;br/&gt;
-北门有酒香&lt;br/&gt;
-带来微醺的故事和理想&lt;/p&gt;
-
-&lt;p&gt;鸽子的身影颤动摇晃 &lt;br/&gt;
-沉醉的春风&lt;br/&gt;
-化成漩涡囚禁玉兰的翅膀&lt;/p&gt;
-
-&lt;p&gt;校园的草木蓬勃生长&lt;br/&gt;
-我走出校门&lt;br/&gt;
-就被拘禁在这参天的围墙&lt;/p&gt;
-
-&lt;p&gt;夜晚燃烧尽它的影子&lt;br/&gt;
-在十一点跟丢了我们&lt;br/&gt;
-十三号线的最后一班&lt;br/&gt;
-缝住了宇宙中心的梦&lt;/p&gt;
-
-&lt;p&gt;月光点燃了荷塘的水&lt;br/&gt;
-美人的双脚触到陆地&lt;br/&gt;
-岿然中央的巨大引力&lt;br/&gt;
-跑得飞快却不敢靠近&lt;/p&gt;
 </content>
  </entry>
  
