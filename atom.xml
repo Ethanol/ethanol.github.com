@@ -4,13 +4,44 @@
  <title>水渍</title>
  <link href="http://multisim.me/atom.xml" rel="self"/>
  <link href="http://multisim.me/"/>
- <updated>2013-11-20T15:34:35+08:00</updated>
+ <updated>2013-12-30T21:53:01+08:00</updated>
  <id>http://multisim.me/</id>
  <author>
    <name>CubicStone Wei</name>
    <email>cubicstonewei@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>文献阅读笔记 2</title>
+   <link href="http://multisim.me/2013/12/05/Articles-2.html"/>
+   <updated>2013-12-05T00:00:00+08:00</updated>
+   <id>urn:uuid:ac28bead-627d-4d6d-8f78-d981730908b8</id>
+   <content type="html">&lt;h4&gt;5 Stochastic protein expression in individual cells at the single molecule level&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Cai, L., Friedman, N., &amp;amp; Xie, X. S. (2006). Stochastic protein expression in individual cells at the single molecule level. Nature, 440(7082), 358–62. doi:10.1038/nature04599&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;这是篇很古老的文章了，讲的是一种细胞内单分子水平的表达情况的检测方法。方法很有趣，但是对实验设备的要求也好高。&lt;/p&gt;
+
+&lt;h4&gt;6 Senescence Is a Developmental Mechanism that Contributes to Embryonic Growth and Patterning&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Storer, M., Mas, A., Robert-Moreno, A., Pecoraro, M., Ortells, M. C., Di Giacomo, V., … Keyes, W. M. (2013). Senescence Is a Developmental Mechanism that Contributes to Embryonic Growth and Patterning. Cell, 155(5), 1119–1130. doi:10.1016/j.cell.2013.10.041&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h4&gt;7 Programmed Cell Senescence during Mammalian Embryonic Development&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Muñoz-Espín, D., Cañamero, M., Maraver, A., Gómez-López, G., Contreras, J., Murillo-Cuesta, S., … Serrano, M. (2013). Programmed Cell Senescence during Mammalian Embryonic Development. Cell. doi:10.1016/j.cell.2013.10.019&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;这两篇是我最近死磕的两篇，发表在同一期的《Cell》上，主要讲述的是细胞衰老机制在胚胎发育中的作用。发育真的是一件神奇的事情，而两篇的研究线路也非常相似，这种「范式」也许已经是行规了。&lt;/p&gt;
+
+&lt;p&gt;另外，养耗子真麻烦。&lt;/p&gt;
+
+&lt;h4&gt;8 Senescent cells harbour features of the cancer epigenome&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Cruickshanks, H. a., McBryan, T., Nelson, D. M., VanderKraats, N. D., Shah, P. P., van Tuyn, J., … Adams, P. D. (2013). Senescent cells harbour features of the cancer epigenome. Nature Cell Biology, 15(12), 1495–1506. doi:10.1038/ncb2879&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;细胞衰老与癌症的表观基因组的关系。说得不清不白的，不好玩。&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>该死的Jekyll</title>
@@ -415,24 +446,6 @@ fileD.close()
 窗外正好可以看到未名湖一带的景致。夕阳把湖面变成了暖色调，与北京大学学生证上的那抹红色颇为相似。新校门和图书馆作为背景；博雅塔和花神庙也被染红。恼人的北大方正楼没有出现。湖面波光荡漾，让人沉醉。我趁势从后面抱住了男生，男生也不反抗，娇嗔地与我逗趣。&lt;br/&gt;
 渐渐地楼道里人开始多了起来。另一个男生从我们身后经过，对男生说了一句，“真宁可你去约炮。”男生脸色稍有一僵，旋即像是没听到一样，继续与我打闹。大概是我长得太老，被认为是在包养正太。&lt;br/&gt;
 我与男生索性翘课。出了四教，日光灼目，却不是文南楼，而是周围寸草不生的现代建筑，颇像地面全面硬化了的清华大学美术学院大楼。我两只手把男生抱了起来：男生却也轻盈，抱着毫不费力，把他抱到了湖边，找了块石头坐下，红色的湖水映着他的脸，我看他他却毫不害羞。我自觉不喜欢孟浪的人，但是男生却只能用这两个字形容，却丝毫不令人生气。我们就这样坐着，看着，直到故事结束，我醒了过来。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>气球先生准备跳楼</title>
-   <link href="http://multisim.me/2013/05/28/Balloon.html"/>
-   <updated>2013-05-28T00:00:00+08:00</updated>
-   <id>urn:uuid:ac28bead-627d-4d6d-8f78-d981730908b8</id>
-   <content type="html">&lt;p&gt;气球先生毫不费力地爬到了楼顶。事实上，爬楼梯对他来说轻而易举：他只需要把腿一松，控制好自己的方向（当然这有些时候有些难度），想到多高就多高。可是气球先生不喜欢高处。他觉得高处空气稀薄，自己的肺胀得厉害。他喜欢土地，那里有新鲜的空气，缤纷的事物，和他曾经的情人。&lt;/p&gt;
-
-&lt;p&gt;这次气球先生爬到楼顶是为了跳楼。他听说气球家族的很多人都是在高处死的。据说他们死的时候内心扩张到最大，气球先生想，这真是一种充满满足的死法。他来自杀，是因为他被石头先生抛弃了。在气球先生一次低空散步中，他遇到了石头先生，他喜欢石头先生的坚定和成熟，石头先生喜欢他的洒脱和见识。可过了段时间，气球先生想出去游历，石头先生却不想动弹。石头先生这才发现气球先生不够坚定成熟，像个小孩；气球先生也发现石头先生不够洒脱博闻，像个老古董。石头先生是最有耐性的，拉住气球先生不放；气球先生也不愿给石头先生负担，不把自己的体重压在石头先生身上。&lt;br/&gt;
-可是石头先生有一天终于不那么坚定，松了松手，气球先生就飘走了。&lt;br/&gt;
-气球先生飘走的时候在怨恨，石头怎么松开了手；石头先生也在气，气球怎么这么快就跑掉，不再回头。&lt;/p&gt;
-
-&lt;p&gt;气球先生决定跳楼。他把脚一松，感觉确实不错。可是最后却轻轻拍在了地上，像是一场毫无力度的按摩。气球先生很失望，拍拍土，发现有个高挑细长的影子在他面前。&lt;br/&gt;
-气球先生就这样遇到了他。身材瘦高，和石头先生不一样，可是气球先生还是想跟他在一起。他隐去了自己的大部分身世，但气球先生不介意，因为他爱他。气球先生叫他锋先生，大概是因为他比较高挑。&lt;br/&gt;
-终于有一天，锋先生和气球先生准备滚床单了。锋先生脱掉了衣服，气球先生看呆了。不是因为他的身体坚硬，闪闪发亮，而是他才发现，他的衣服是一个刀鞘。而气球先生，现在必须对他改口叫刀子先生了。&lt;br/&gt;
-他俩拥抱了。气球先生的血溅了刀子先生一脸，而刀子先生觉得，扑面而来的是他从没体验过的温热。&lt;/p&gt;
 </content>
  </entry>
  
