@@ -4,13 +4,54 @@
  <title>水渍</title>
  <link href="http://multisim.me/atom.xml" rel="self"/>
  <link href="http://multisim.me/"/>
- <updated>2014-04-12T21:25:17+08:00</updated>
+ <updated>2014-04-21T17:45:54+08:00</updated>
  <id>http://multisim.me/</id>
  <author>
    <name>CubicStone Wei</name>
    <email>cubicstonewei@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>不确定性的丧失</title>
+   <link href="http://multisim.me/2014/04/21/Lost.html"/>
+   <updated>2014-04-21T00:00:00+08:00</updated>
+   <id>urn:uuid:ac28bead-627d-4d6d-8f78-d981730908b8</id>
+   <content type="html">&lt;p&gt;忙了几天闲了下来，坐在实验室里，扫完了邮件里每周推送的文献，然后便开始发呆。几本书摆在书架上，忌惮于背后的干老板，只拿起《信息论基础》翻了翻。不想做实验，也不知道该做什么，于是跑到图书馆来看《四声猿》。&lt;/p&gt;
+
+&lt;p&gt;看得犯困。&lt;/p&gt;
+
+&lt;p&gt;这就是明天小小科学家的一天。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;现在才明白当年费尽心思学的很多东西都有其用处在。可是当我认识到这一点的时候已经忘得差不多了。自动控制真是一门哲学。&lt;/p&gt;
+
+&lt;p&gt;尽管如此，我依然对现在我所做的事情抱着无尽的消极态度，并认为这对我自己和除我自己之外的全人类的意义，不过是一篇学术汪洋中无根的论文。而且是顺利的前提下。就如同我在学习电力电子的时候不停发出的慨叹：除非我去当电工，否则我一辈子也不会碰电力电子；除非我去搞学术，否则我一辈子也不会再做生物实验。&lt;/p&gt;
+
+&lt;p&gt;可是一辈子就那么长，大概10%的时间都在做实验，其实也跟一辈子差不了多少了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;这么几年逐渐承认了自己就是一个彻头彻尾的普通人。这里的普通人倒不是中关园老太太口中的精英的对立面，而是在自己对学术的中二病退烧之后，沉溺于丧失未来的无病呻吟。这么多年随波逐流走了一条最省事儿的路，最后才发现迟早都要还，省事儿的路终于走到了头。&lt;/p&gt;
+
+&lt;p&gt;本科四年大概想明白了爱情，大概解决了身份这件事，前路光明无磕绊了之后，回到自己身上，还是不知道该怎么走。&lt;/p&gt;
+
+&lt;p&gt;于是终于明白了生活就是一条不得不向前走的路，走得慢了时间的枪就戳到了脊梁骨上。而我现在才知道，大概是这几年走得太慢了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;有点开始后悔本科时候没有做这个，没有看那个，可无非是现在的欲望投射到过去，却不敢在当下把这些想法完成。这么想来本科时候我过得很好，因为从来不会想高中少做了些什么事情。&lt;/p&gt;
+
+&lt;p&gt;其实读博士也是轻松的，虽然性价比不高，但是起码我仍然可以用一些时间来图书馆看书发牢骚。归根到底都是自己的问题，却不知道该怎么走才好。&lt;/p&gt;
+
+&lt;p&gt;以前喜欢随波逐流的日子，现在却觉得不确定才是好玩的人生。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;撇开已经被我扔掉很多的生活必需再想，活着不就图个乐嘛。&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>老太太的科学</title>
@@ -321,37 +362,6 @@
 &lt;blockquote&gt;&lt;p&gt;Cruickshanks, H. a., McBryan, T., Nelson, D. M., VanderKraats, N. D., Shah, P. P., van Tuyn, J., … Adams, P. D. (2013). Senescent cells harbour features of the cancer epigenome. Nature Cell Biology, 15(12), 1495–1506. doi:10.1038/ncb2879&lt;/p&gt;&lt;/blockquote&gt;
 
 &lt;p&gt;细胞衰老与癌症的表观基因组的关系。说得不清不白的，不好玩。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>该死的Jekyll</title>
-   <link href="http://multisim.me/2013/11/20/Jekyll.html"/>
-   <updated>2013-11-20T00:00:00+08:00</updated>
-   <id>urn:uuid:ac28bead-627d-4d6d-8f78-d981730908b8</id>
-   <content type="html">&lt;p&gt;OSX升级到了10.9，Ruby也跟着升级了。然后博客就挂了。&lt;/p&gt;
-
-&lt;p&gt;求助&lt;a href=&quot;http://dangfan.me&quot;&gt;Terro&lt;/a&gt;大神，可是他早就从Jekyll转移到了Pelican又转移到了我不知道是神马东西的平台，一番调试无果，迁移到Pelican又不成功，所以又回头找解决方案。&lt;/p&gt;
-
-&lt;p&gt;试了rvm，不成。装了各种奇怪的程序包，也不成。看见Chrome上的Miku对我卖萌，我只想掐死她。&lt;/p&gt;
-
-&lt;p&gt;后来改了一句Terro同学当年写的git.sh，把一句&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;bundle exec ejekyll --pygments&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;改成了&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;jekyll build&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;TMD就好了！！！&lt;/p&gt;
-
-&lt;p&gt;好了！！！&lt;/p&gt;
-
-&lt;p&gt;Jekyll你更新了都不告诉我么！！！&lt;/p&gt;
-
-&lt;p&gt;这种智商怎么读博士！！！&lt;/p&gt;
-
-&lt;p&gt;摔！！！&lt;/p&gt;
 </content>
  </entry>
  
