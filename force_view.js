@@ -1,20 +1,16 @@
 var width = 1280,
     height = 720,
     fill = d3.scale.category20();
-
     darkest_color=64;
     transition_time=400;
     time_font_size=4;
     name_font_size=4;
+    MAX_NUM=10000;
+    time_scale=2;
 
-circle_num=15
-circle_data=new Array();
-for (var i = 0; i < circle_num; i++) {
-  circle_data[i]=circle_num-i-1
-};
+var circle_num=15;
+circle_data=generate_circle_array(circle_num);
 
-// mouse event vars
-var mousedown_node = null;
 
 // init svg
 var outer = d3.select("#chart")
@@ -27,8 +23,8 @@ var vis = outer
   .append('svg:g')
     .call(d3.behavior.zoom().on("zoom", rescale))
     .on("dblclick.zoom", null)
-  .append('svg:g')
-    .on("mousedown", mousedown);
+  .append('svg:g');
+
 vis.append('svg:rect')
     .attr('width', width)
     .attr('height', height)
@@ -79,32 +75,51 @@ bg_layer.selectAll("text")
       .attr("opacity",0);
 
 //Circle End ####################
-//Circle End ####################
-//Circle End ####################
-//Circle End ####################
-//Circle End ####################
 
-var dataset={
-  nodes:[
-    {'index':'1',name:"苹果园","value":20},
-    {'index':'2',name:"古城","value":80},
-    {'index':'3',name:"玉泉路","value":0}
-  ],
-  edges:[
-    {source:0,target:1},
-    {source:1,target:2},
-    {source:2,target:0}
-  ]
-};
-var center=0;
-var distance=[0,2,3];
+var dataset={edges:[],nodes:[]};
+d3.tsv("station_index.txt",function(data){
+  dataset.nodes=data;
+  d3.tsv("link_index.txt",function(data){
+    dataset.edges=data;
+    for (var i = 0; i<dataset.edges.length;i++) {
+      dataset.edges[i].source=parseInt(dataset.edges[i].source);
+      dataset.edges[i].target=parseInt(dataset.edges[i].target);
+      dataset.edges[i].distance=parseFloat(dataset.edges[i].distance);
+    };
+    num_station=dataset.nodes.length;
+  matrix=new Array(num_station);
+  for(var ii=0;ii<num_station;ii++){
+    matrix[ii]=new Array(num_station);
+    for(var jj=0;jj<num_station;jj++){
+      matrix[ii][jj]=MAX_NUM;
+    }
+    matrix[ii][ii]=0;
+  }
+//  console.log(matrix);
+  for(ii=0;ii<dataset.edges.length;ii++){
+    console.log(ii);
+    matrix[dataset.edges[ii].source][dataset.edges[ii].target]=dataset.edges[ii].distance;
+  }
 
+
+    dist=calculate_length(0);
+    for (var i=0;i<dataset.nodes.length;i++){
+      dataset.nodes[i].value=dist[i];
+    };
+//    console.log(dist);
+    force_data();
+  });
+});
+
+//Data End########################
+
+function force_data(){
 var force=d3.layout.force()
-  .nodes(dataset.nodes)
   .links(dataset.edges)
+  .nodes(dataset.nodes)
   .size([width,height])
   .start()
-    .on("tick",function(){
+  .on("tick",function(){
     nodes
       .attr("cx",function(d){return change_location_x(d.x,d.y,d.value);})
       .attr("cy",function(d){return change_location_y(d.x,d.y,d.value);})
@@ -127,6 +142,7 @@ var nodes=data_layer.selectAll("circle")
   .data(dataset.nodes)
   .enter()
   .append("circle")
+  .attr("id",function(d){return "data_cir"+d.index})
   .attr("r",2)
   .style("fill","#f00")
   .call(force.drag)
@@ -150,9 +166,19 @@ var nodes=data_layer.selectAll("circle")
         .duration(transition_time)
         .attr("opacity","1");
     })
- /*   .on("click",function(d){
-
-    })*/;
+    .on("click",function(d){
+     // console.log(d.index);
+      dist=calculate_length(d.index);
+      for(ii=0;ii<dist.length;ii++){
+        d3.select("#data_cir"+ii).data()[0].value=dist[ii];  
+      }
+      console.log(dist);
+      force.start();
+      //vis.rect.attr("visibility","inherit");
+      //vis.rect.attr("visibility","visible");
+    //  vis.call(d3.behavior.zoom().on("zoom"), rescale);
+    //    d.value=d.value+10;
+    });
 var node_name=data_layer.selectAll("text")
   .data(dataset.nodes)
   .enter()
@@ -162,21 +188,18 @@ var node_name=data_layer.selectAll("text")
     .attr("font-size",name_font_size+"px")
     .attr("fill","blue")
     .attr("opacity",0.1);
-
-
-function mousedown() {
-  if (!mousedown_node) {
-    // allow panning if nothing is selected
-    vis.call(d3.behavior.zoom().on("zoom"), rescale);
-    return;
-  }
 }
 
 //--------------------
-//--------------------
-//--------------------
-//--------------------
-//--------------------
+
+function generate_circle_array(circle_num){
+  var circle_data=new Array();
+  for (var i = 0; i < circle_num; i++) {
+    circle_data[i]=circle_num-i-1
+  };
+  return circle_data;
+}
+
 function draw_circle(d){
   var vcx=width/2;
   var vy=height/2;
@@ -191,6 +214,7 @@ function draw_circle_color(d,darkestcolor){
 }
 
 function rescale() {
+    console.log("a");
   trans=d3.event.translate;
   scale=d3.event.scale;
   vis.attr("transform",
@@ -199,11 +223,43 @@ function rescale() {
 }
 
 function change_location_x(x,y,value){
-  return width/2+(x-width/2)*value/Math.sqrt((x-width/2)*(x-width/2)+(y-height/2)*(y-height/2));
+  return width/2+(x-width/2)*value*time_scale/Math.sqrt((x-width/2)*(x-width/2)+(y-height/2)*(y-height/2));
 }
 function change_location_y(x,y,value){
-  return height/2+(y-height/2)*value/Math.sqrt((x-width/2)*(x-width/2)+(y-height/2)*(y-height/2));
+  return height/2+(y-height/2)*value*time_scale/Math.sqrt((x-width/2)*(x-width/2)+(y-height/2)*(y-height/2));
 }
 
+function calculate_length(start_station){
+  dist=matrix[start_station];
+  dist_length=dist.length;
+  S=new Array();
 
+  S.push(start_station);
+  min_dis=0;
+  dist[start_station]=-1;
+  while(S.length!=num_station){
+    min_location=-1;
+    this_min_dis=MAX_NUM;
+    for(jj=0;jj<dist_length;jj++){
+      if(dist[jj]>=min_dis && dist[jj]<this_min_dis){
+        this_min_dis=dist[jj];
+        min_location=jj;
+      }
+    }
+    S.push(min_location);
+    min_dis=this_min_dis;
+    dist[min_location]=dist[min_location]-1;
+    for(jj=0;jj<dist_length;jj++){
+      if(dist[jj]>=min_dis){
+        if((min_dis+matrix[min_location][jj])<dist[jj]){
+          dist[jj]=min_dis+matrix[min_location][jj]
+        }
+      }
+    }
+  }
+  for(ii=0;ii<dist_length;ii++){
+    dist[ii]=dist[ii]+1;
+  }
+  return dist;
+}
 
