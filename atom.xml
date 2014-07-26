@@ -4,13 +4,114 @@
  <title>水渍</title>
  <link href="http://multisim.me/atom.xml" rel="self"/>
  <link href="http://multisim.me/"/>
- <updated>2014-07-26T22:05:28+08:00</updated>
+ <updated>2014-07-26T23:05:05+08:00</updated>
  <id>http://multisim.me/</id>
  <author>
    <name>CubicStone Wei</name>
    <email>cubicstonewei@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>北京地铁的时间距离</title>
+   <link href="http://multisim.me/2014/07/26/Beijing_Subway_Distance.html"/>
+   <updated>2014-07-26T00:00:00+08:00</updated>
+   <id>urn:uuid:ac28bead-627d-4d6d-8f78-d981730908b8</id>
+   <content type="html">&lt;p&gt;最近用D3.js写了一个&lt;a href=&quot;/Projects/Beijing_Subway_Distance/index.html&quot;&gt;小网页&lt;/a&gt;，来计算北京地铁任一站点到其它各个站点之间的时间距离。现在做了一个初版，顺道记录一下实现时候一些有趣的地方。&lt;/p&gt;
+
+&lt;h4&gt;D3.js&lt;/h4&gt;
+
+&lt;p&gt;D3.js我很早之前就想学，无奈不会js，这次有了这个想法，终于下定决心开始实践。D3.js上手有点不适应，不过理解了它面向数据、用数据生成元素、把数据绑定到D3对象的逻辑之后，其实用起来还是挺方便的。尤其是在处理动态数据的时候，事半功倍，得心应手。&lt;/p&gt;
+
+&lt;p&gt;我在学D3.js的时候参考了它的&lt;a href=&quot;github.com/mbostock/d3/wiki&quot;&gt;官方文档&lt;/a&gt;，也看了这本书&lt;a href=&quot;http://book.douban.com/subject/24748670/&quot;&gt;《数据可视化实战：使用D3设计交互式图表》&lt;/a&gt;。这本书写得相对基础，有很多细节没有讲到，但是对我这样对JS一无所知的小白来说，入门还是很好的选择。&lt;/p&gt;
+
+&lt;p&gt;D3.js用好了还是很帅的。相对来说Processing.js自由度更大，但是用起来麻烦多了。&lt;/p&gt;
+
+&lt;h4&gt;数据&lt;/h4&gt;
+
+&lt;p&gt;说到D3.js，首先想到的肯定是数据。北京地铁的数据我是手动输入的，其中的站间时间和换乘时间是利用的百度地图和北京地铁首末班车的数据估算的。&lt;/p&gt;
+
+&lt;p&gt;数据录入时有很多实际的考量。考虑到大家都不会坐机场线往返于东直门和三元桥，也不会从T2到T3，我在录入数据的时候只录入了东直门和三元桥分别到T2和T3航站楼的数据。当然这样会出现从T2到T3的时间距离过长的情况，不过考虑到本身这段路程没什么意义，就没有再加以修改。&lt;/p&gt;
+
+&lt;p&gt;换乘站的数据我是分别录入的，比如西直门站我分为了2号线、4号线和13号线三个站点录入，方便后面的最短路由算法计算。站间时间和换乘时间都是有向的，虽然在我的数据里两个方向的数据全都一致（机场线除外）。因为我的数据来源没有对上下行和换乘方向所用的时间做出区分，不过我们都知道，2号线和4号线换乘两个方向的时间相差甚多。（事实上，更精细地来说，换乘站的换乘时间和两条线路的上下行方向也有关系。比如国家图书馆的同台换乘。不过我没有考虑这个。）&lt;/p&gt;
+
+&lt;p&gt;在最终的图形呈现上，我把换乘站合并为一个，同时对机场线做了符合我们认知的处理。&lt;/p&gt;
+
+&lt;h4&gt;Dijkstra&lt;/h4&gt;
+
+&lt;p&gt;（我很忧伤永远记不得这个怎么拼……）&lt;/p&gt;
+
+&lt;p&gt;在做这个之前，&lt;a href=&quot;https://dangfan.me&quot;&gt;党主席&lt;/a&gt;告诫我用Python跑Dijkstra会很慢。但是我觉得写C实在是太麻烦了，所以还是用Python跑了一遍，意外地快。后来主席大人说对于大规模的网络来说Python是灾难，但是我这个网络规模还是很小的。&lt;/p&gt;
+
+&lt;p&gt;我本想把距离数据跑出来放到文件里直接读，但是既然这么快我就用js重现了一遍。还是挺快的。&lt;/p&gt;
+
+&lt;p&gt;以及这次我是第一次写Dijkstra一遍通的。&lt;/p&gt;
+
+&lt;h4&gt;小bug&lt;/h4&gt;
+
+&lt;p&gt;最早我使用的是v2版本的D3.js，当我换到v3下面之后发现在我拖动节点的时候整个页面也在运动。&lt;a href=&quot;http://bl.ocks.org/mbostock/6123708&quot;&gt;这个网站&lt;/a&gt;帮我解决了这个问题。&lt;/p&gt;
+
+&lt;p&gt;最早的版本中，换乘站的距离是按照其中某一个线路的站台出发的距离。后期我更改为任意一个线路站台到某站点的最短时间。&lt;/p&gt;
+
+&lt;h4&gt;其他&lt;/h4&gt;
+
+&lt;p&gt;我本来想做一个在建/规划线路加入既有线网后的时间距离图，代码也做了一些预留，但是暂时还不打算实现。一方面在建/规划线路的时间只能做一个大概估计，另外一方面这些线路提出了一些很奇葩的问题，比如6号线2期和大站快车的速度和待避时间、亦庄火车站的处理、15号线和16号线在既有线网上加站的处理方法、新机场线、R1、S6、CBD线的速度和票价（是否应该纳入线网的计算）。等我想清楚了这些问题，我会把这部分加上。&lt;/p&gt;
+
+&lt;p&gt;附赠北京地铁线路大全，留着备忘：&lt;/p&gt;
+
+&lt;p&gt;既有线路&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;1号线（苹果园-四惠东）&lt;br/&gt;
+2号线（积水潭-积水潭）&lt;br/&gt;
+4号线/大兴线（安河桥北-天宫院）&lt;br/&gt;
+5号线（天通苑北-宋家庄）&lt;br/&gt;
+6号线（海淀五路居-草房）&lt;br/&gt;
+8号线（朱辛庄-南锣鼓巷）&lt;br/&gt;
+9号线（国家图书馆-郭公庄）&lt;br/&gt;
+10号线（巴沟-巴沟）&lt;br/&gt;
+13号线（西直门-东直门）&lt;br/&gt;
+14号线（张郭庄-西局）&lt;br/&gt;
+15号线（俸伯-望京西）&lt;br/&gt;
+八通线（四惠-土桥）&lt;br/&gt;
+昌平线（西二旗-南邵） &lt;br/&gt;
+亦庄线（宋家庄-亦庄火车站）&lt;br/&gt;
+房山线（郭公庄-苏庄）&lt;br/&gt;
+机场线（东直门-东直门）&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;在建线路&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;6号线二期（草房-东小营）&lt;br/&gt;
+7号线（北京西站-焦化厂）&lt;br/&gt;
+8号线3期（南锣鼓巷-瀛海）&lt;br/&gt;
+14号线东段（善各庄-金台路）&lt;br/&gt;
+14号线中段（金台路-西局）&lt;br/&gt;
+15号线一期西段（望京西-清华东）&lt;br/&gt;
+16号线/山后线（北安河-宛平城）&lt;br/&gt;
+西郊线（巴沟-香山）
+昌平线二期（南邵-涧头西）
+机场线西延（东直门-北新桥）&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;计划线路&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;3号线（和6号线拧麻花） &lt;br/&gt;
+9号线北延（国家图书馆-西二旗）&lt;br/&gt;
+12号线（北三环） &lt;br/&gt;
+15号线2期（清华东-西苑）  &lt;br/&gt;
+17号线（未来科技城到亦庄）&lt;br/&gt;
+房山线北延（郭公庄-夏家胡同）&lt;br/&gt;
+15号线东延（俸伯-南彩）
+R1线（18号线，1号线的复线）&lt;br/&gt;
+19号线（新机场线复线？）&lt;br/&gt;
+门头沟线（磁悬浮？）&lt;br/&gt;
+燕房线&lt;br/&gt;
+东四环线（青云路-环球影城）&lt;br/&gt;
+玉泉路线（福寿岭-樊羊路）&lt;br/&gt;
+新机场线&lt;br/&gt;
+平谷线&lt;br/&gt;
+S6线（市郊铁路）&lt;br/&gt;
+CBD捷运&lt;/p&gt;&lt;/blockquote&gt;
+</content>
+ </entry>
  
  <entry>
    <title>《中国哲学史》笔记</title>
@@ -387,49 +488,6 @@
 &lt;p&gt;所以也就明白了为什么那么多基佬要老婆孩子热炕头，不是因为他们多自私，而是人活着真的不是为了自己活着的。我可以站在道德制高点上蔑视别人，为我自己的勇气和坚持感到自豪，其实也是一种自讨心安的自私。&lt;/p&gt;
 
 &lt;p&gt;且看三十岁的我是什么形状。&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>文献阅读笔记 3</title>
-   <link href="http://multisim.me/2014/02/06/Articles-3.html"/>
-   <updated>2014-02-06T00:00:00+08:00</updated>
-   <id>urn:uuid:ac28bead-627d-4d6d-8f78-d981730908b8</id>
-   <content type="html">&lt;h4&gt;10 Water-induced finger wrinkles do not affect touch acuity or dexterity in handling wet objects&lt;/h4&gt;
-
-&lt;blockquote&gt;&lt;p&gt;Haseleu, J., Omerbašić, D., Frenzel, H., Gross, M., &amp;amp; Lewin, G. R. (2014). Water-induced finger wrinkles do not affect touch acuity or dexterity in handling wet objects. PloS one, 9(1), e84949. doi:10.1371/journal.pone.0084949&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;浸水的手指并不会让拿东西更容易。&lt;/p&gt;
-
-&lt;p&gt;这也可以啊？！&lt;/p&gt;
-
-&lt;p&gt;统计学拯救自然科学。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4&gt;11 Performing mathematical operations with metamaterials&lt;/h4&gt;
-
-&lt;blockquote&gt;&lt;p&gt;Silva, A., Monticone, F., Castaldi, G., Galdi, V., Alù, A., &amp;amp; Engheta, N. (2014). Performing mathematical operations with metamaterials. Science (New York, N.Y.), 343(6167), 160–3. doi:10.1126/science.1242818&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;超材料用来做数学计算。利用光学（电磁）性质对光信号进行微分积分etc. 反应速度快是优势，不过还没做出来……反正我不觉得这会是一个像晶体管一样划时代的技术。&lt;/p&gt;
-
-&lt;p&gt;作者说可以做图像处理。以后单反人士就要背着一堆超材料滤镜勾搭妹纸了么？&lt;/p&gt;
-
-&lt;h4&gt;12 Ice lubrication for moving heavy stones to the Forbidden City in 15th- and 16th-century China&lt;/h4&gt;
-
-&lt;blockquote&gt;&lt;p&gt;Li, J., Chen, H., &amp;amp; Stone, H. a. (2013). Ice lubrication for moving heavy stones to the Forbidden City in 15th- and 16th-century China. Proceedings of the National Academy of Sciences of the United States of America, 110(50), 20023–7. doi:10.1073/pnas.1309319110&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;本文研究了在建造紫禁城的时候，利用冰运输石块的原理，以及人类建造史对抗摩擦的种种方法。这段历史我早就听闻，本文主要是为了……（给西方观众猎奇？）&lt;/p&gt;
-
-&lt;p&gt;作者之一是清华大学摩擦学实验室的，原来你们还搞考古啊。&lt;/p&gt;
-
-&lt;h4&gt;13 Bidirectional developmental potential in reprogrammed cells with acquired pluripotency&lt;/h4&gt;
-
-&lt;p&gt;Obokata, H., Sasai, Y., Niwa, H., Kadota, M., Andrabi, M., Takata, N., … Wakayama, T. (2014). Bidirectional developmental potential in reprogrammed cells with acquired pluripotency. Nature, 505(7485), 676–680. doi:10.1038/nature12969&lt;/p&gt;
-
-&lt;p&gt;最近的一个大发现。细胞蘸醋，越蘸越有。&lt;/p&gt;
-
-&lt;p&gt;不过也有人质疑其实验的科学性，尽管如此，这也为我们提供了一条细胞重编程的新路。&lt;/p&gt;
 </content>
  </entry>
  
