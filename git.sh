@@ -3,7 +3,8 @@ git add .
 git commit -a -m 'update'
 git push
 echo '!!!'
-jekyll build
+#bundle exec  ejekyll
+bundle exec jekyll build
 echo '!!!'
 cd _site
 #rm Gem*
