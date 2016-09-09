@@ -9,9 +9,9 @@
 * |\.|._)._)
 * --------------------------------- */
 
-@import url(http://fonts.useso.com/css?family=Galdeano);
-@import url(http://fonts.useso.com/css?family=Electrolize);
-@import url(http://fonts.useso.com/css?family=Cuprum);
+@import url(http://fonts.googleapis.com/css?family=Galdeano);
+@import url(http://fonts.googleapis.com/css?family=Electrolize);
+@import url(http://fonts.googleapis.com/css?family=Cuprum);
 body{font-size:14px;font-family: Palatino, 'Palatino Linotype', Georgia, SimSun, serif;;color:#000000;background-color:#ffffff;}
 *{padding:0;margin: 0;border:none;outline:none;}
 h1{font-family:"Cuprum",sans-serif;font-size:2.2em;color:#000;}
