@@ -1,7 +1,7 @@
 #!/bin/bash
 git add .
 git commit -a -m 'update'
-git push  --set-upstream origin master
+git push  #--set-upstream origin master
 echo '!!!'
 #bundle exec  ejekyll
 bundle exec jekyll build
@@ -13,4 +13,4 @@ git init
 git add .
 git commit -m 'update'
 git remote add origin git@github.com:Ethanol/ethanol.github.com.git
-git push -f  --set-upstream origin master
+git push -f  #--set-upstream origin master
