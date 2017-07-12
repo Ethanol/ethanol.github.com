@@ -14,4 +14,4 @@ git add .
 git commit -m 'update'
 #git push --set-upstream origin master
 git remote add origin git@github.com:Ethanol/ethanol.github.com.git
-git push --set-upstream origin master
+git push --set-upstream origin master #-f
